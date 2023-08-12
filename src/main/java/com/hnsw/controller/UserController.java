@@ -23,9 +23,6 @@ public class UserController {
     @DeleteMapping("/{id}")
     public String delete(@PathVariable Integer id) {
         System.out.println("SpringBoot-User-Service-Delete" + id);
-        System.out.println("SpringBoot-User-Service-Delete" + id);
-        System.out.println("SpringBoot-User-Service-Delete" + id);
-
         return "{'module':'user delete'}";
     }
 
@@ -36,7 +33,7 @@ public class UserController {
 //    @RequestMapping(value = "/users", method = RequestMethod.PUT)
     @PutMapping
     public String update(@RequestBody User user) {
-        System.out.println("SpringBoot-User-Service-Update");
+        System.out.println("SpringBoot-User-Service-Update"+user);
         return "{'module':'user update'}";
     }
 

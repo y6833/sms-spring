@@ -22,7 +22,10 @@ public class SMSCodeServiceImpl implements SMSCodeService {
     }
 
     @Override
-    public boolean checkCode(SMSCode smsCOde) {
-        return false;
+    public boolean checkCode(SMSCode smsCode) {
+        // 内存中的验证码与传递过来的验证码比对
+        String code = smsCode.getCode();
+        String cacheCode = codeUtils.get(smsCode.getTele());
+        return code.equals(cacheCode);
     }
 }

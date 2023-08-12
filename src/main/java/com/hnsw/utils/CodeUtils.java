@@ -1,6 +1,7 @@
 package com.hnsw.utils;
 
 import org.jetbrains.annotations.NotNull;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -25,6 +26,11 @@ public class CodeUtils {
         }
         return codeStr;
 
+    }
+
+    @Cacheable(value = "smsCode", key = "#tele")
+    public String get(String tele) {
+        return null;
     }
 
 //    public static void main(String[] args) throws Exception {
